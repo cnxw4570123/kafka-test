@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: server
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:19090/eureka
+
+    register-with-eureka: false
+    fetch-registry: false
+
+server:
+  port: 19090
