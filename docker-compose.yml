@@ -40,3 +40,20 @@ services:
       platform: linux/amd64
     depends_on:
       - kafka
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    restart: always
+    platform: linux/amd64
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: kafka-test
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

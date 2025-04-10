@@ -3,10 +3,10 @@ spring:
     name: payment
 
   datasource:
-    url: jdbc:h2:mem:payment
-    driver-class-name: org.h2.Driver
-    username: sa
-    password:
+    url: jdbc:postgresql://localhost:5432/kafka-test
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
 
   jpa:
     hibernate:

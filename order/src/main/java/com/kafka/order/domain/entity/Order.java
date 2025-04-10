@@ -55,7 +55,8 @@ public class Order {
         this.orderStatus = orderStatus;
     }
 
-    public void updatePaymentSuccess() {
+    public void updatePaymentSuccess(Long paymentId) {
         this.orderStatus = OrderStatus.PAID;
+        this.paymentId = paymentId;
     }
 }
