@@ -1,13 +1,14 @@
 package com.kafka.payment.infrastructure.event.request;
 
-import com.kafka.payment.application.command.request.PaymentCreateCommand;
+import com.kafka.payment.application.dto.command.PaymentCreateCommand;
 import java.math.BigDecimal;
+import java.util.UUID;
 import lombok.Builder;
 
 @Builder
 public record PaymentCreatedEvent(
     Long paymentId,
-    Long orderId,
+    UUID orderId,
     BigDecimal totalPrice
 ) {
 
@@ -15,7 +16,7 @@ public record PaymentCreatedEvent(
         return PaymentCreatedEvent.builder()
             .paymentId(paymentId)
             .orderId(command.orderId())
-            .totalPrice(command.totalPrice())
+            .totalPrice(command.totalAmount())
             .build();
     }
 }

@@ -1,6 +1,6 @@
 package com.kafka.payment.application.service;
 
-import com.kafka.payment.application.command.request.PaymentCreateCommand;
+import com.kafka.payment.application.dto.command.PaymentCreateCommand;
 
 public interface PaymentEventProducer {
 

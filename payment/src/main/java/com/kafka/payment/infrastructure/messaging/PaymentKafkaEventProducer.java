@@ -1,6 +1,6 @@
 package com.kafka.payment.infrastructure.messaging;
 
-import com.kafka.payment.application.command.request.PaymentCreateCommand;
+import com.kafka.payment.application.dto.command.PaymentCreateCommand;
 import com.kafka.payment.application.service.PaymentEventProducer;
 import com.kafka.payment.infrastructure.event.request.PaymentCreatedEvent;
 import com.kafka.payment.infrastructure.util.EventPayloadConverter;

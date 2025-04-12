@@ -2,6 +2,9 @@ spring:
   application:
     name: payment
 
+  config:
+    import: optional:file:.env[.properties]
+
   datasource:
     url: jdbc:postgresql://localhost:5432/kafka-test
     driver-class-name: org.postgresql.Driver
@@ -10,7 +13,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     properties:
       hibernate:
         show_sql: true
@@ -38,5 +41,16 @@ eureka:
     service-url:
       defaultZone: http://localhost:19090/eureka
 
+toss:
+  client-key: ${TOSS_CLIENT_KEY}
+  client-secret: ${TOSS_CLIENT_SECRET}
+  success-url: ${TOSS_SUCCESS_URL:/api/payment/success}
+  fail-url: ${TOSS_FAIL_URL}
+
 server:
   port: 19093
+
+api:
+  connection-timeout: 3000
+  read-timeout: 120000
+  max-buffer-size-MB: 300
